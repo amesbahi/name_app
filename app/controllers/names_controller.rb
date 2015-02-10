@@ -4,13 +4,17 @@ class NamesController < ApplicationController
 	end
 
 	def new
+		@name = Name.new
 	end
 
 	def create
 		@name = Name.new(name_params)
 
-		@name.save
-		redirect_to @name
+		if @name.save
+			redirect_to @name
+		else
+			render 'new'
+		end
 	end
 
 	def show
