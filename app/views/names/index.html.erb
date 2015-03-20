@@ -5,7 +5,8 @@
 <table>
 	<% @names.each do |name| %>
 		<tr>
-			<td><%= name.name %></td>
+			<td><%= name.name %></td><br>
+			<td><%= link_to "Click here to see your name reversed!", name_path(name) %></td>
 		</tr>
 	<% end %>
 </table>
